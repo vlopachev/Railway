@@ -9,4 +9,6 @@ public class PassengerWagonCreator implements WagonCreator{
     public Wagon createWagon() {
         return new PassengerWagon();
     }
+
+
 }

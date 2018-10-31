@@ -4,5 +4,4 @@ import com.epam.railway.wagons.Wagon;
 
 public interface WagonCreator {
     Wagon createWagon();
-
 }

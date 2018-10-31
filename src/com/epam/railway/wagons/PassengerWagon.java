@@ -1,11 +1,14 @@
 package com.epam.railway.wagons;
 
+import com.epam.railway.wagons.wagon_fabric.TypePassengerWagon;
+
 public class PassengerWagon extends Wagon {
     private int numberOfseats;
     private int numberOfbeds;
     private double brutto;
     private double baggage;
     private TypePassengerWagon typePassengerWagon;
+
 
     public void setTypePassengerWagon(TypePassengerWagon typePassengerWagon) {
         this.typePassengerWagon = typePassengerWagon;
@@ -34,7 +37,8 @@ public class PassengerWagon extends Wagon {
 
     @Override
     public String toString() {
-        return "PassengerWagon{" +
+        return super.getId() + " " +
+                "PassengerWagon{" +
                 "numberOfseats=" + numberOfseats +
                 ", numberOfbeds=" + numberOfbeds +
                 ", brutto=" + brutto +

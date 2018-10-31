@@ -1,4 +1,4 @@
-package com.epam.railway.wagons;
+package com.epam.railway.wagons.wagon_fabric;
 
 public enum TypePassengerWagon {
     Coach,
