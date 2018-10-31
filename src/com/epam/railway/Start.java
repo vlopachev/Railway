@@ -2,8 +2,11 @@ package com.epam.railway;
 
 import com.epam.railway.locomotives.Locomotive;
 import com.epam.railway.locomotives.TypeLocomotive;
+import com.epam.railway.wagons.PassengerWagon;
+import com.epam.railway.wagons.TypePassengerWagon;
 import com.epam.railway.wagons.Wagon;
 import com.epam.railway.wagons.wagon_fabric.CargoWagonCreator;
+import com.epam.railway.wagons.wagon_fabric.PassengerWagonCreator;
 import com.epam.railway.wagons.wagon_fabric.WagonCreator;
 
 public class Start {
@@ -18,6 +21,11 @@ public class Start {
         Wagon wagon = wagonFactory.createWagon();
 
         System.out.println(wagon.isLoaded());
+
+        WagonCreator passengerWagonFactory = new PassengerWagonCreator();
+        PassengerWagon wagon2 = (PassengerWagon) passengerWagonFactory.createWagon();
+        wagon2.setTypePassengerWagon(TypePassengerWagon.EconomClassCar);
+        System.out.println(wagon2.toString());
 
 
 
