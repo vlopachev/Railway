@@ -9,7 +9,7 @@ public abstract class Wagon extends RailwayTransport {
         return typeWagon;
     }
 
-    private void setTypeWagon(TypeWagon typeWagon) {
+    void setTypeWagon(TypeWagon typeWagon) {
         this.typeWagon = typeWagon;
     }
 }
