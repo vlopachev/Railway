@@ -5,7 +5,7 @@ import com.epam.railway.RailwayTransport;
 public abstract class Wagon extends RailwayTransport {
     private TypeWagon typeWagon;
 
-    public TypeWagon getTypeWagon() {
+    protected TypeWagon getTypeWagon() {
         return typeWagon;
     }
 
