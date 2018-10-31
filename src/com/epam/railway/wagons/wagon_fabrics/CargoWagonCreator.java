@@ -1,4 +1,4 @@
-package com.epam.railway.wagons.wagon_fabric;
+package com.epam.railway.wagons.wagon_fabrics;
 
 import com.epam.railway.wagons.CargoWagon;
 import com.epam.railway.wagons.Wagon;

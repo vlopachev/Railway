@@ -3,9 +3,8 @@ package com.epam.railway;
 import com.epam.railway.locomotives.Locomotive;
 import com.epam.railway.locomotives.TypeLocomotive;
 import com.epam.railway.wagons.PassengerWagon;
-import com.epam.railway.wagons.wagon_fabric.TypePassengerWagon;
-import com.epam.railway.wagons.wagon_fabric.PassengerWagonCreator;
-import com.epam.railway.wagons.wagon_fabric.WagonCreator;
+import com.epam.railway.wagons.wagon_fabrics.PassengerWagonCreator;
+import com.epam.railway.wagons.wagon_fabrics.WagonCreator;
 
 public class Start {
     public static void main(String[] args) {
@@ -19,7 +18,6 @@ public class Start {
 
         WagonCreator passengerWagonFactory = new PassengerWagonCreator();
         PassengerWagon wagon2 = (PassengerWagon) passengerWagonFactory.createWagon();
-        wagon2.setTypePassengerWagon(TypePassengerWagon.EconomClassCar);
         System.out.println(wagon2.toString());
 
 
