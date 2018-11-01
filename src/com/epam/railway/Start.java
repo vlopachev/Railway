@@ -8,17 +8,17 @@ import com.epam.railway.wagons.wagon_fabrics.WagonCreator;
 
 public class Start {
     public static void main(String[] args) {
-        RailwayTransport loco = new Locomotive(TypeLocomotive.Passenger);
-        RailwayTransport loco1 = new Locomotive(TypeLocomotive.Cargo);
+        RailwayTransport loco = new Locomotive(TypeLocomotive.DieselLocomotive);
+        RailwayTransport loco1 = new Locomotive(TypeLocomotive.ElectroLocomotive);
 
         System.out.println(loco.toString());
         System.out.println(loco1.toString());
 
 
-
         WagonCreator passengerWagonFactory = new PassengerWagonCreator();
         PassengerWagon wagon2 = (PassengerWagon) passengerWagonFactory.createWagon();
         System.out.println(wagon2.toString());
+
 
 
 
