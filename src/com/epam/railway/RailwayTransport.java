@@ -14,7 +14,7 @@ public abstract class RailwayTransport {
     }
 
 
-    protected RailwayTransport() {
+    public RailwayTransport() {
         count_id ++;
         id = count_id;
     }

@@ -38,7 +38,7 @@ public class TrainFormer {
         }
     }
 
-    private double weightWagons(){
+    public double getWeightWagons(){
         double weight = 0;
         if (wagons != null){
             for (Wagon wagon:wagons){

@@ -21,6 +21,8 @@ public class Start {
         trainFormer.setLocomotive(new Locomotive());
         trainFormer.formedTrain();
 
+        System.out.println(trainFormer.getWeightWagons());
+
 
 
 
