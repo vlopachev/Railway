@@ -3,15 +3,23 @@ package com.epam.railway;
 public abstract class RailwayTransport {
     private static long count_id;
     private long id;
+    private double weight;
 
-    protected abstract String getTypeTransport();
+    public double getWeight() {
+        return weight;
+    }
 
-    public RailwayTransport() {
+    public long getId() {
+        return id;
+    }
+
+
+    protected RailwayTransport() {
         count_id ++;
         id = count_id;
     }
 
-    protected long getId() {
-        return id;
+    protected void setWeight(double weight) {
+        this.weight = weight;
     }
 }

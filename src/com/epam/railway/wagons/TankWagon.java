@@ -1,7 +1,7 @@
 package com.epam.railway.wagons;
 
-public class CargoWagon extends Wagon {
-    public CargoWagon() {
+public class TankWagon extends Wagon {
+    public TankWagon() {
         super.setTypeWagon(TypeWagon.Cargo);
     }
 }
