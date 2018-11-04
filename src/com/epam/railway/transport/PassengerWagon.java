@@ -19,4 +19,14 @@ public class PassengerWagon extends RailwayTransport {
     public void setSeats(int seats) {
         this.seats = seats;
     }
+
+    @Override
+    public void setPayload(double payload) {
+        if (payload <= typePassengerWagon.getMaxPayload()){
+            setPayload(payload);
+        } else {
+            System.out.println("Maximum load weight exceeded");
+        }
+
+    }
 }

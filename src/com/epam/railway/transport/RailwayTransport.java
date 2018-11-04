@@ -2,7 +2,7 @@ package com.epam.railway.transport;
 
 
 public abstract class RailwayTransport {
-    private static long count_id;
+    private static long countId;
     private long id;
     private String model;
     private double weight;
@@ -10,8 +10,8 @@ public abstract class RailwayTransport {
 
 
     public RailwayTransport() {
-        count_id ++;
-        id = count_id;
+        countId ++;
+        id = countId;
     }
 
     public long getId() {
@@ -38,11 +38,11 @@ public abstract class RailwayTransport {
         this.weight = weight;
     }
 
-    public void setPayload(double payload) {
-        this.payload = payload;
-    }
-
     public double getTotalWeight() {
         return weight + payload;
+    }
+
+    protected void setPayload(double payload) {
+        this.payload = payload;
     }
 }
