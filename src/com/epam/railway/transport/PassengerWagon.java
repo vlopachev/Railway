@@ -4,6 +4,7 @@ public class PassengerWagon extends RailwayTransport {
     TypePassengerWagon typePassengerWagon;
     private int seats;
 
+
     public TypePassengerWagon getTypePassengerWagon() {
         return typePassengerWagon;
     }
@@ -17,16 +18,15 @@ public class PassengerWagon extends RailwayTransport {
     }
 
     public void setSeats(int seats) {
-        this.seats = seats;
+        if (seats <= typePassengerWagon.getSeats()){
+            this.seats = seats;
+        } else {
+            System.out.println("Maximum seats weight exceeded");
+        }
     }
 
     @Override
-    public void setPayload(double payload) {
-        if (payload <= typePassengerWagon.getMaxPayload()){
-            setPayload(payload);
-        } else {
-            System.out.println("Maximum load weight exceeded");
-        }
-
+    public double getWeight() {
+        return typePassengerWagon.getWeight();
     }
 }

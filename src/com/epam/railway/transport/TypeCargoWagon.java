@@ -7,19 +7,19 @@ public enum TypeCargoWagon {
     PLATFORM_WAGON(23.5,71.0),
     HOPPER_WAGON(23.0,70.0);
 
-    private final double weightWagon;
-    private final double maxPayload;
+    private final double weight;
+    private final double payload;
 
-    TypeCargoWagon(double weightWagon, double maxPayload) {
-        this.weightWagon = weightWagon;
-        this.maxPayload = maxPayload;
+    TypeCargoWagon(double weight, double payload) {
+        this.weight = weight;
+        this.payload = payload;
     }
 
-    public double getWeightWagon(){
-        return weightWagon;
+    public double getWeight(){
+        return weight;
     }
 
-    public double getMaxPayload(){
-        return maxPayload;
+    public double getPayload(){
+        return payload;
     }
 }

@@ -1,18 +1,22 @@
 package com.epam.railway.transport;
 
 public class Locomotive extends RailwayTransport {
-    private int power;
+    private TypeLocomotive typeLocomotive;
 
-    public int getPower() {
-        return power;
+    public TypeLocomotive getTypeLocomotive() {
+        return typeLocomotive;
     }
 
-    public void setPower(int power) {
-        this.power = power;
+    public void setTypeLocomotive(TypeLocomotive typeLocomotive) {
+        this.typeLocomotive = typeLocomotive;
+    }
+
+    public int getPower() {
+        return typeLocomotive.getPower();
     }
 
     @Override
-    public void setPayload(double payload) {
-
+    public double getWeight() {
+        return typeLocomotive.getWeight();
     }
 }

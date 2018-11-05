@@ -19,8 +19,7 @@ public class TrainFormer {
         for (RailwayTransport transport : train) {
             System.out.println(transport.getClass());
             System.out.println(transport.getId());
-            System.out.println(transport.getPayload());
-            System.out.println(transport.getTotalWeight());
+            System.out.println(transport.getWeight());
         }
 
     }

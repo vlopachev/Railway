@@ -13,14 +13,18 @@ public class Start {
 
         Locomotive locomotive = (Locomotive) transportFactory.createRailwayTransport(TypeRailwayTransport.LOCOMOTIVE);
 
+        locomotive.setTypeLocomotive(TypeLocomotive.L2ES4K);
+
         List<RailwayTransport> train = new ArrayList<>();
 
         train.add(locomotive);
 
+
+
         for (int i = 0; i < 20; i++) {
             CargoWagon cargoWagon = (CargoWagon) transportFactory.createRailwayTransport(TypeRailwayTransport.CARGO_WAGON);
             cargoWagon.setTypeCargoWagon(TypeCargoWagon.OPEN_WAGON);
-            cargoWagon.setPayload(70);
+            cargoWagon.setCargo(20);
             train.add(cargoWagon);
         }
 

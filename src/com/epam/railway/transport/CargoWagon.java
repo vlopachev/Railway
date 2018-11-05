@@ -3,6 +3,7 @@ package com.epam.railway.transport;
 
 public class CargoWagon extends RailwayTransport {
     TypeCargoWagon typeCargoWagon;
+    private double cargo;
 
     public TypeCargoWagon getTypeCargoWagon() {
         return typeCargoWagon;
@@ -10,16 +11,22 @@ public class CargoWagon extends RailwayTransport {
 
     public void setTypeCargoWagon(TypeCargoWagon typeCargoWagon) {
         this.typeCargoWagon = typeCargoWagon;
-        setWeight(typeCargoWagon.getWeightWagon());
     }
 
     @Override
-    public void setPayload(double payload) {
-        if (payload <= typeCargoWagon.getMaxPayload()){
-            super.setPayload(payload);
+    public double getWeight() {
+        return typeCargoWagon.getWeight() + cargo;
+    }
+
+    public double getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(double cargo) {
+        if (cargo <= typeCargoWagon.getPayload()){
+            this.cargo = cargo;
         } else {
             System.out.println("Maximum load weight exceeded");
         }
-
     }
 }
