@@ -15,6 +15,14 @@ public class TrainFormer {
         this.train = train;
     }
 
+    public List<RailwayTransport> getTrain() {
+        return train;
+    }
+
+    public void setTrain(List<RailwayTransport> train) {
+        this.train = train;
+    }
+
     public void getTypesTrain() {
         for (RailwayTransport transport : train) {
             System.out.println(transport.getClass());

@@ -25,8 +25,6 @@ public class CargoWagon extends RailwayTransport {
     public void setCargo(double cargo) {
         if (cargo <= typeCargoWagon.getPayload()){
             this.cargo = cargo;
-        } else {
-            System.out.println("Maximum load weight exceeded");
         }
     }
 }

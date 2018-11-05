@@ -3,6 +3,7 @@ package com.epam.railway.transport;
 public class PassengerWagon extends RailwayTransport {
     TypePassengerWagon typePassengerWagon;
     private int seats;
+    private double AVERAGE_PASSENGER_WEIGHT = 0.1;
 
 
     public TypePassengerWagon getTypePassengerWagon() {
@@ -20,13 +21,11 @@ public class PassengerWagon extends RailwayTransport {
     public void setSeats(int seats) {
         if (seats <= typePassengerWagon.getSeats()){
             this.seats = seats;
-        } else {
-            System.out.println("Maximum seats weight exceeded");
         }
     }
 
     @Override
     public double getWeight() {
-        return typePassengerWagon.getWeight();
+        return typePassengerWagon.getWeight() + seats * AVERAGE_PASSENGER_WEIGHT;
     }
 }
