@@ -4,6 +4,7 @@ package com.epam.railway.transport;
 public abstract class RailwayTransport {
     private static long countId;
     private long id;
+    private double weight;
 
     public RailwayTransport() {
         countId ++;
@@ -14,6 +15,11 @@ public abstract class RailwayTransport {
         return id;
     }
 
-    public abstract double getWeight();
+    public double getWeight() {
+        return weight;
+    }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 }
