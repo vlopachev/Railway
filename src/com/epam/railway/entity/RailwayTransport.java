@@ -1,4 +1,4 @@
-package com.epam.railway.transport;
+package com.epam.railway.entity;
 
 
 public abstract class RailwayTransport {
@@ -22,4 +22,6 @@ public abstract class RailwayTransport {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
+    public abstract double getFullWeight();
 }

@@ -1,4 +1,4 @@
-package com.epam.railway.transport;
+package com.epam.railway.entity;
 
 public class RailwayTransportFactory {
     public RailwayTransport createRailwayTransport(TypeRailwayTransport railwayTransport){
@@ -13,6 +13,9 @@ public class RailwayTransportFactory {
                 break;
             case CARGO_WAGON:
                 transport = new CargoWagon();
+                break;
+            case POST_WAGON:
+                transport = new ServiceWagon();
                 break;
             default:
                 new RuntimeException("Not supported TypeRailwayTransport");
