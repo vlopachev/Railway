@@ -1,6 +1,6 @@
 package com.epam.railway.entity;
 
-import com.epam.railway.logic.ParametersRailWayTransport;
+import com.epam.railway.logic.RailWayUtils;
 
 public class PassengerWagon extends RailwayTransport {
     private int seats;
@@ -26,6 +26,6 @@ public class PassengerWagon extends RailwayTransport {
 
     @Override
     public double getFullWeight() {
-        return getWeight() + passengers * ParametersRailWayTransport.AVERAGE_PERSON_WEIGHT;
+        return getWeight() + passengers * RailWayUtils.WEIGHT_AVERAGE_PERSON;
     }
 }

@@ -1,6 +1,6 @@
 package com.epam.railway.entity;
 
-import com.epam.railway.logic.ParametersRailWayTransport;
+import com.epam.railway.logic.RailWayUtils;
 
 public class Locomotive extends RailwayTransport {
     private TypeLocomotive typeLocomotive;
@@ -23,12 +23,12 @@ public class Locomotive extends RailwayTransport {
         if (typeLocomotive != null){
             switch (typeLocomotive){
                 case LOCOMOTIVE_2ES4K:
-                    if (sand <= ParametersRailWayTransport.SAND_STOCK_2ES4K){
+                    if (sand <= RailWayUtils.SAND_STOCK_2ES4K){
                         this.sand = sand;
                     }
                     break;
                 case LOCOMOTIVE_3ES4K:
-                    if (sand <= ParametersRailWayTransport.SAND_STOCK_3ES4K){
+                    if (sand <= RailWayUtils.SAND_STOCK_3ES4K){
                         this.sand = sand;
                     }
                     break;
@@ -48,6 +48,6 @@ public class Locomotive extends RailwayTransport {
 
     @Override
     public double getFullWeight() {
-        return getWeight() + sand * ParametersRailWayTransport.SAND_LITER_WEIGHT;
+        return getWeight() + sand * RailWayUtils.WEIGHT_LITER_SAND;
     }
 }

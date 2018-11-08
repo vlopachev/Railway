@@ -1,8 +1,8 @@
 package com.epam.railway.logic;
 
-public final class ParametersRailWayTransport {
-    public final static double AVERAGE_PERSON_WEIGHT = 0.062; //ton
-    public final static double SAND_LITER_WEIGHT = 0.0017;
+public final class RailWayUtils {
+    public final static double WEIGHT_AVERAGE_PERSON = 0.062; //ton
+    public final static double WEIGHT_LITER_SAND = 0.0017;
     // Locomotives
     public final static int    POWER_2ES4K = 5920; //kW
     public final static int    POWER_3ES4K = 8880;
@@ -10,7 +10,6 @@ public final class ParametersRailWayTransport {
     public final static double WEIGHT_3ES4K = 288;
     public final static double SAND_STOCK_2ES4K = 1200; // Liter
     public final static double SAND_STOCK_3ES4K = 1800;
-
     // Covered wagon
     public final static double WEIGHT_COVERED_WAGON = 26.0;
     public final static double VOLUME_COVERED_WAGON = 138.0; // CBM
@@ -38,12 +37,16 @@ public final class ParametersRailWayTransport {
     public final static double WEIGHT_BAGGAGE_WAGON = 52.3;
     public final static double PAYLOAD_BAGGAGE_WAGON = 18.3;
     public final static int    SEATS_BAGGAGE_WAGON = 2;
+    // Sleeping wagon
+    public final static double WEIGHT_SLEEPING_WAGON = 60.5;
+    public final static int    SEATS_SLEEPING_WAGON = 36;
+    // Couchette wagon
+    public final static double WEIGHT_COUCHETTE_WAGON = 56.0;
+    public final static int    SEATS_COUCHETTE_WAGON = 54;
 
 
 
 
-
-
-    private ParametersRailWayTransport() {
+    private RailWayUtils() {
     }
 }
