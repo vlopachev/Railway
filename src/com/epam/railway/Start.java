@@ -17,15 +17,26 @@ public class Start {
 
 
         List<RailwayTransport> train = new ArrayList<>();
-        train.add(locomotive);
 
-        for (int i = 0; i < 60; i++) {
+
+        for (int i = 0; i < 30; i++) {
             CargoWagon wagon =
                     (CargoWagon) factory.createRailwayTransport(TypeRailwayTransport.CARGO_WAGON);
             wagon.setTypeCargoWagon(TypeCargoWagon.COVERED_WAGON);
             wagon.setCargo(68);
             train.add(wagon);
         }
+
+        for (int i = 0; i < 30; i++) {
+            CargoWagon wagon =
+                    (CargoWagon) factory.createRailwayTransport(TypeRailwayTransport.CARGO_WAGON);
+            wagon.setTypeCargoWagon(TypeCargoWagon.OPEN_WAGON);
+            wagon.setCargo(70);
+            train.add(wagon);
+        }
+
+        train.add(locomotive);
+
 
         for (RailwayTransport transport:train){
             System.out.println(transport);
