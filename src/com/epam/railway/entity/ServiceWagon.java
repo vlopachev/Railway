@@ -15,6 +15,13 @@ public class ServiceWagon extends RailwayTransport {
 
     public void setTypeServiceWagon(TypeServiceWagon typeServiceWagon) {
         this.typeServiceWagon = typeServiceWagon;
+        switch (typeServiceWagon){
+            case BAGGAGE_WAGON:
+                setWeight(RailWayUtils.WEIGHT_BAGGAGE_WAGON);
+                break;
+            case POST_WAGON:
+                setWeight(RailWayUtils.WEIGHT_POST_WAGON);
+        }
     }
 
     public int getSeats() {

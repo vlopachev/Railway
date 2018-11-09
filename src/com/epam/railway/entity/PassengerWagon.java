@@ -25,6 +25,16 @@ public class PassengerWagon extends RailwayTransport {
 
     public void setTypePassengerWagon(TypePassengerWagon typePassengerWagon) {
         this.typePassengerWagon = typePassengerWagon;
+        switch (typePassengerWagon){
+            case SLEEPING_WAGON:
+                setWeight(RailWayUtils.WEIGHT_SLEEPING_WAGON);
+                break;
+            case COUCHETTE_WAGON:
+                setWeight(RailWayUtils.WEIGHT_COUCHETTE_WAGON);
+                break;
+            default:
+                new RuntimeException("Not Supported TypePassengerWagon");
+        }
     }
 
     public void setPassengers(int passengers) {
