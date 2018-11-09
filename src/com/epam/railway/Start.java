@@ -2,7 +2,7 @@ package com.epam.railway;
 
 
 import com.epam.railway.entity.*;
-import com.epam.railway.logic.RailWayUtils;
+import com.epam.railway.logic.RailwayUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,8 @@ public class Start {
         RailwayTransportFactory factory = new RailwayTransportFactory();
         Locomotive locomotive =
                 (Locomotive) factory.createRailwayTransport(TypeRailwayTransport.LOCOMOTIVE);
-        locomotive.setTypeLocomotive(TypeLocomotive.LOCOMOTIVE_2ES4K);
-        locomotive.setSand(RailWayUtils.SAND_STOCK_2ES4K);
+        locomotive.setTypeLocomotive(TypeLocomotive._2ES4K);
+        locomotive.setSand(RailwayUtils.SAND_STOCK_2ES4K);
 
 
         List<RailwayTransport> train = new ArrayList<>();
@@ -32,7 +32,7 @@ public class Start {
         }
 
 
-        System.out.println(RailWayUtils.isEnoughPowerLocomotiveForWagons(train));
+        System.out.println(RailwayUtils.isEnoughPowerLocomotiveForWagons(train));
 
 
 

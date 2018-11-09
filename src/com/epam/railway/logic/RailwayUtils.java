@@ -5,7 +5,7 @@ import com.epam.railway.entity.RailwayTransport;
 
 import java.util.List;
 
-public final class RailWayUtils {
+public final class RailwayUtils {
     public final static double WEIGHT_AVERAGE_PERSON = 0.062; //ton
     public final static double WEIGHT_LITER_SAND = 0.0017;
     // Locomotives
@@ -66,6 +66,13 @@ public final class RailWayUtils {
         return false;
     }
 
+    public static boolean checkUniformityTrain(List<RailwayTransport> train){
+
+
+        return false;
+    }
+
+
     private static double getWeightTrain(List<RailwayTransport> train) {
         double weight = 0;
         for (RailwayTransport transport: train){
@@ -75,6 +82,8 @@ public final class RailWayUtils {
     }
 
 
-    private RailWayUtils() {
+
+
+    private RailwayUtils() {
     }
 }

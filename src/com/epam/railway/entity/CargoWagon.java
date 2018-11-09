@@ -1,7 +1,7 @@
 package com.epam.railway.entity;
 
 
-import com.epam.railway.logic.RailWayUtils;
+import com.epam.railway.logic.RailwayUtils;
 
 public class CargoWagon extends RailwayTransport {
     private TypeCargoWagon typeCargoWagon;
@@ -16,24 +16,24 @@ public class CargoWagon extends RailwayTransport {
         this.typeCargoWagon = typeCargoWagon;
         switch (typeCargoWagon) {
             case COVERED_WAGON:
-                setWeight(RailWayUtils.WEIGHT_COVERED_WAGON);
-                payload = RailWayUtils.PAYLOAD_COVERED_WAGON;
+                setWeight(RailwayUtils.WEIGHT_COVERED_WAGON);
+                payload = RailwayUtils.PAYLOAD_COVERED_WAGON;
                 break;
             case OPEN_WAGON:
-                setWeight(RailWayUtils.WEIGHT_OPEN_WAGON);
-                payload = RailWayUtils.PAYLOAD_OPEN_WAGON;
+                setWeight(RailwayUtils.WEIGHT_OPEN_WAGON);
+                payload = RailwayUtils.PAYLOAD_OPEN_WAGON;
                 break;
             case HOPPER_WAGON:
-                setWeight(RailWayUtils.WEIGHT_HOPPER_WAGON);
-                payload = RailWayUtils.PAYLOAD_HOPPER_WAGON;
+                setWeight(RailwayUtils.WEIGHT_HOPPER_WAGON);
+                payload = RailwayUtils.PAYLOAD_HOPPER_WAGON;
                 break;
             case PLATFORM_WAGON:
-                setWeight(RailWayUtils.WEIGHT_PLATFORM_WAGON);
-                payload = RailWayUtils.PAYLOAD_PLATFORM_WAGON;
+                setWeight(RailwayUtils.WEIGHT_PLATFORM_WAGON);
+                payload = RailwayUtils.PAYLOAD_PLATFORM_WAGON;
                 break;
             case TANK_WAGON:
-                setWeight(RailWayUtils.WEIGHT_TANK_WAGON);
-                payload = RailWayUtils.PAYLOAD_TANK_WAGON;
+                setWeight(RailwayUtils.WEIGHT_TANK_WAGON);
+                payload = RailwayUtils.PAYLOAD_TANK_WAGON;
                 break;
             default:
                 throw new RuntimeException("Not Supported TypeCargoWagon");

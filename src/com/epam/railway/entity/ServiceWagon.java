@@ -1,6 +1,6 @@
 package com.epam.railway.entity;
 
-import com.epam.railway.logic.RailWayUtils;
+import com.epam.railway.logic.RailwayUtils;
 
 public class ServiceWagon extends RailwayTransport {
     private TypeServiceWagon typeServiceWagon;
@@ -17,14 +17,14 @@ public class ServiceWagon extends RailwayTransport {
         this.typeServiceWagon = typeServiceWagon;
         switch (typeServiceWagon) {
             case BAGGAGE_WAGON:
-                setWeight(RailWayUtils.WEIGHT_BAGGAGE_WAGON);
-                payload = RailWayUtils.PAYLOAD_BAGGAGE_WAGON;
-                seats = RailWayUtils.SEATS_POST_WAGON;
+                setWeight(RailwayUtils.WEIGHT_BAGGAGE_WAGON);
+                payload = RailwayUtils.PAYLOAD_BAGGAGE_WAGON;
+                seats = RailwayUtils.SEATS_POST_WAGON;
                 break;
             case POST_WAGON:
-                setWeight(RailWayUtils.WEIGHT_POST_WAGON);
-                payload = RailWayUtils.PAYLOAD_POST_WAGON;
-                seats = RailWayUtils.SEATS_BAGGAGE_WAGON;
+                setWeight(RailwayUtils.WEIGHT_POST_WAGON);
+                payload = RailwayUtils.PAYLOAD_POST_WAGON;
+                seats = RailwayUtils.SEATS_BAGGAGE_WAGON;
                 break;
             default:
                 throw new RuntimeException("Not Supported TypeServiceWagon");
@@ -58,7 +58,7 @@ public class ServiceWagon extends RailwayTransport {
     @Override
     public double getFullWeight() {
         return getWeight() + cargo + operators *
-                RailWayUtils.WEIGHT_AVERAGE_PERSON;
+                RailwayUtils.WEIGHT_AVERAGE_PERSON;
     }
 
     @Override
