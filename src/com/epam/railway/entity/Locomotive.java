@@ -33,7 +33,7 @@ public class Locomotive extends RailwayTransport {
                     }
                     break;
                 default:
-                    new RuntimeException("NotSupportedTypeLocomotive");
+                    new RuntimeException("Not Supported TypeLocomotive");
             }
         }
     }
@@ -48,6 +48,6 @@ public class Locomotive extends RailwayTransport {
 
     @Override
     public double getFullWeight() {
-        return getWeight() + sand * RailWayUtils.WEIGHT_LITER_SAND;
+        return getWeight() + sand;
     }
 }

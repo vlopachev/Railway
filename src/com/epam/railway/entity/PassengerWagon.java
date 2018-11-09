@@ -3,6 +3,7 @@ package com.epam.railway.entity;
 import com.epam.railway.logic.RailWayUtils;
 
 public class PassengerWagon extends RailwayTransport {
+    private TypePassengerWagon typePassengerWagon;
     private int seats;
     private int passengers;
 
@@ -18,10 +19,31 @@ public class PassengerWagon extends RailwayTransport {
         return passengers;
     }
 
+    public TypePassengerWagon getTypePassengerWagon() {
+        return typePassengerWagon;
+    }
+
+    public void setTypePassengerWagon(TypePassengerWagon typePassengerWagon) {
+        this.typePassengerWagon = typePassengerWagon;
+    }
+
     public void setPassengers(int passengers) {
-        if (passengers <= seats){
-            this.passengers = passengers;
+        if (typePassengerWagon != null){
+            switch (typePassengerWagon){
+                case COUCHETTE_WAGON:
+                    seats = RailWayUtils.SEATS_COUCHETTE_WAGON;
+                    break;
+                case SLEEPING_WAGON:
+                    seats = RailWayUtils.SEATS_SLEEPING_WAGON;
+                    break;
+                default:
+                    new RuntimeException("Not Supported TypePassengerWagon");
+            }
+            if (passengers <= seats){
+                this.passengers = passengers;
+            }
         }
+
     }
 
     @Override

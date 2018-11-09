@@ -8,8 +8,8 @@ public final class RailWayUtils {
     public final static int    POWER_3ES4K = 8880;
     public final static double WEIGHT_2ES4K = 192;
     public final static double WEIGHT_3ES4K = 288;
-    public final static double SAND_STOCK_2ES4K = 1200; // Liter
-    public final static double SAND_STOCK_3ES4K = 1800;
+    public final static double SAND_STOCK_2ES4K = 2;
+    public final static double SAND_STOCK_3ES4K = 3;
     // Covered wagon
     public final static double WEIGHT_COVERED_WAGON = 26.0;
     public final static double VOLUME_COVERED_WAGON = 138.0; // CBM

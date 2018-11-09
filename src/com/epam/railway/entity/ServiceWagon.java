@@ -21,17 +21,25 @@ public class ServiceWagon extends RailwayTransport {
         return seats;
     }
 
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
-
     public double getCargo() {
         return cargo;
     }
 
     public void setCargo(double cargo) {
-        if (cargo <= payload){
-            this.cargo = cargo;
+        if (typeServiceWagon != null){
+            switch (typeServiceWagon){
+                case BAGGAGE_WAGON:
+                    payload = RailWayUtils.PAYLOAD_BAGGAGE_WAGON;
+                    break;
+                case POST_WAGON:
+                    payload = RailWayUtils.PAYLOAD_POST_WAGON;
+                    break;
+                default:
+                    new RuntimeException("Not Supported TypeServiceWagon");
+            }
+            if (cargo <= payload){
+                this.cargo = cargo;
+            }
         }
     }
 
@@ -39,17 +47,25 @@ public class ServiceWagon extends RailwayTransport {
         return payload;
     }
 
-    public void setPayload(double payload) {
-        this.payload = payload;
-    }
-
     public int getOperators() {
         return operators;
     }
 
     public void setOperators(int operators) {
-        if (operators <= seats){
-            this.operators = operators;
+        if (typeServiceWagon != null){
+            switch (typeServiceWagon){
+                case POST_WAGON:
+                    seats = RailWayUtils.SEATS_POST_WAGON;
+                    break;
+                case BAGGAGE_WAGON:
+                    seats = RailWayUtils.SEATS_BAGGAGE_WAGON;
+                    break;
+                default:
+                    new RuntimeException("Not Supported TypeServiceWagon");
+            }
+            if (operators <= seats){
+                this.operators = operators;
+            }
         }
     }
 
