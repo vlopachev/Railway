@@ -1,5 +1,10 @@
 package com.epam.railway.logic;
 
+import com.epam.railway.entity.Locomotive;
+import com.epam.railway.entity.RailwayTransport;
+
+import java.util.List;
+
 public final class RailWayUtils {
     public final static double WEIGHT_AVERAGE_PERSON = 0.062; //ton
     public final static double WEIGHT_LITER_SAND = 0.0017;
@@ -44,7 +49,30 @@ public final class RailWayUtils {
     public final static double WEIGHT_COUCHETTE_WAGON = 56.0;
     public final static int    SEATS_COUCHETTE_WAGON = 54;
 
+    public static boolean isEnoughPowerLocomotiveForWagons(List<RailwayTransport> train){
+        if (train != null){
+            Locomotive locomotive = null;
+            if (train.get(0).getClass() == Locomotive.class){
+                locomotive = (Locomotive) train.get(0);
+            } else if (train.get(train.size() - 1).getClass() == Locomotive.class){
+                locomotive = (Locomotive) train.get(train.size() - 1);
+            }
+            if (locomotive != null){
+                if (locomotive.getPower() - getWeightTrain(train) > 0){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
+    private static double getWeightTrain(List<RailwayTransport> train) {
+        double weight = 0;
+        for (RailwayTransport transport: train){
+            weight += transport.getFullWeight();
+        }
+        return weight;
+    }
 
 
     private RailWayUtils() {

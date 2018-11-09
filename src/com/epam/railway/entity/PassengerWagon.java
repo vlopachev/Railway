@@ -11,10 +11,6 @@ public class PassengerWagon extends RailwayTransport {
         return seats;
     }
 
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
-
     public int getPassengers() {
         return passengers;
     }
@@ -25,12 +21,14 @@ public class PassengerWagon extends RailwayTransport {
 
     public void setTypePassengerWagon(TypePassengerWagon typePassengerWagon) {
         this.typePassengerWagon = typePassengerWagon;
-        switch (typePassengerWagon){
+        switch (typePassengerWagon) {
             case SLEEPING_WAGON:
                 setWeight(RailWayUtils.WEIGHT_SLEEPING_WAGON);
+                seats = RailWayUtils.SEATS_COUCHETTE_WAGON;
                 break;
             case COUCHETTE_WAGON:
                 setWeight(RailWayUtils.WEIGHT_COUCHETTE_WAGON);
+                seats = RailWayUtils.SEATS_SLEEPING_WAGON;
                 break;
             default:
                 new RuntimeException("Not Supported TypePassengerWagon");
@@ -38,22 +36,9 @@ public class PassengerWagon extends RailwayTransport {
     }
 
     public void setPassengers(int passengers) {
-        if (typePassengerWagon != null){
-            switch (typePassengerWagon){
-                case COUCHETTE_WAGON:
-                    seats = RailWayUtils.SEATS_COUCHETTE_WAGON;
-                    break;
-                case SLEEPING_WAGON:
-                    seats = RailWayUtils.SEATS_SLEEPING_WAGON;
-                    break;
-                default:
-                    new RuntimeException("Not Supported TypePassengerWagon");
-            }
-            if (passengers <= seats){
-                this.passengers = passengers;
-            }
+        if (seats > 0 && passengers <= seats) {
+            this.passengers = passengers;
         }
-
     }
 
     @Override
@@ -64,7 +49,7 @@ public class PassengerWagon extends RailwayTransport {
 
     @Override
     public String getTypeTransport() {
-        if (typePassengerWagon != null){
+        if (typePassengerWagon != null) {
             return typePassengerWagon.toString();
         }
         return "Type not set";

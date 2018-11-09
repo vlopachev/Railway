@@ -15,17 +15,20 @@ public class ServiceWagon extends RailwayTransport {
 
     public void setTypeServiceWagon(TypeServiceWagon typeServiceWagon) {
         this.typeServiceWagon = typeServiceWagon;
-        switch (typeServiceWagon){
+        switch (typeServiceWagon) {
             case BAGGAGE_WAGON:
                 setWeight(RailWayUtils.WEIGHT_BAGGAGE_WAGON);
+                payload = RailWayUtils.PAYLOAD_BAGGAGE_WAGON;
+                seats = RailWayUtils.SEATS_POST_WAGON;
                 break;
             case POST_WAGON:
                 setWeight(RailWayUtils.WEIGHT_POST_WAGON);
+                payload = RailWayUtils.PAYLOAD_POST_WAGON;
+                seats = RailWayUtils.SEATS_BAGGAGE_WAGON;
+                break;
+            default:
+                new RuntimeException("Not Supported TypeServiceWagon");
         }
-    }
-
-    public int getSeats() {
-        return seats;
     }
 
     public double getCargo() {
@@ -33,20 +36,8 @@ public class ServiceWagon extends RailwayTransport {
     }
 
     public void setCargo(double cargo) {
-        if (typeServiceWagon != null){
-            switch (typeServiceWagon){
-                case BAGGAGE_WAGON:
-                    payload = RailWayUtils.PAYLOAD_BAGGAGE_WAGON;
-                    break;
-                case POST_WAGON:
-                    payload = RailWayUtils.PAYLOAD_POST_WAGON;
-                    break;
-                default:
-                    new RuntimeException("Not Supported TypeServiceWagon");
-            }
-            if (cargo <= payload){
-                this.cargo = cargo;
-            }
+        if (payload > 0 && cargo <= payload) {
+            this.cargo = cargo;
         }
     }
 
@@ -59,20 +50,8 @@ public class ServiceWagon extends RailwayTransport {
     }
 
     public void setOperators(int operators) {
-        if (typeServiceWagon != null){
-            switch (typeServiceWagon){
-                case POST_WAGON:
-                    seats = RailWayUtils.SEATS_POST_WAGON;
-                    break;
-                case BAGGAGE_WAGON:
-                    seats = RailWayUtils.SEATS_BAGGAGE_WAGON;
-                    break;
-                default:
-                    new RuntimeException("Not Supported TypeServiceWagon");
-            }
-            if (operators <= seats){
-                this.operators = operators;
-            }
+        if (seats > 0 && operators <= seats) {
+            this.operators = operators;
         }
     }
 
@@ -84,7 +63,7 @@ public class ServiceWagon extends RailwayTransport {
 
     @Override
     public String getTypeTransport() {
-        if (typeServiceWagon != null){
+        if (typeServiceWagon != null) {
             typeServiceWagon.toString();
         }
         return "Type not set";

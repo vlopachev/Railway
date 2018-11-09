@@ -19,18 +19,22 @@ public class Start {
         List<RailwayTransport> train = new ArrayList<>();
         train.add(locomotive);
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 60; i++) {
             CargoWagon wagon =
                     (CargoWagon) factory.createRailwayTransport(TypeRailwayTransport.CARGO_WAGON);
             wagon.setTypeCargoWagon(TypeCargoWagon.OPEN_WAGON);
-            wagon.setCargo(72);
+            wagon.setCargo(70);
             train.add(wagon);
         }
 
         for (RailwayTransport transport:train){
-            System.out.println(transport.getId());
-            System.out.println(transport.getFullWeight());
+            System.out.println(transport);
         }
+
+
+        System.out.println(RailWayUtils.isEnoughPowerLocomotiveForWagons(train));
+
+
 
 
     }

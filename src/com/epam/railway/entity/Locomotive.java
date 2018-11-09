@@ -44,6 +44,16 @@ public class Locomotive extends RailwayTransport {
 
     public void setTypeLocomotive(TypeLocomotive typeLocomotive) {
         this.typeLocomotive = typeLocomotive;
+        switch (typeLocomotive){
+            case LOCOMOTIVE_2ES4K:
+                setWeight(RailWayUtils.WEIGHT_2ES4K);
+                break;
+            case LOCOMOTIVE_3ES4K:
+                setWeight(RailWayUtils.WEIGHT_3ES4K);
+                break;
+            default:
+                new RuntimeException("Not Supported TypeLocomotive");
+        }
     }
 
     @Override
@@ -59,5 +69,13 @@ public class Locomotive extends RailwayTransport {
         return "Type not set";
     }
 
-
+    @Override
+    public String toString() {
+        return "Locomotive{" +
+                "id=" + getId() +
+                ", typeLocomotive=" + typeLocomotive +
+                ", power=" + power +
+                ", fullWeight=" + getFullWeight() +
+                '}';
+    }
 }
