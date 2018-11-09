@@ -18,7 +18,7 @@ public class RailwayTransportFactory {
                 transport = new ServiceWagon();
                 break;
             default:
-                new RuntimeException("Not supported TypeRailwayTransport");
+                throw new RuntimeException("Not supported TypeRailwayTransport");
 
         }
         return transport;
