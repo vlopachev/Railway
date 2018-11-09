@@ -81,4 +81,14 @@ public class ServiceWagon extends RailwayTransport {
         return getWeight() + cargo + operators *
                 RailWayUtils.WEIGHT_AVERAGE_PERSON;
     }
+
+    @Override
+    public String getTypeTransport() {
+        if (typeServiceWagon != null){
+            typeServiceWagon.toString();
+        }
+        return "Type not set";
+    }
+
+
 }

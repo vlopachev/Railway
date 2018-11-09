@@ -76,4 +76,14 @@ public class CargoWagon extends RailwayTransport {
     public double getFullWeight() {
         return getWeight() + cargo;
     }
+
+    @Override
+    public String getTypeTransport() {
+        if (typeCargoWagon != null){
+            return typeCargoWagon.toString();
+        }
+        return "Type not set";
+    }
+
+
 }

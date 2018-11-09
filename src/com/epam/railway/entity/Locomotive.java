@@ -50,4 +50,14 @@ public class Locomotive extends RailwayTransport {
     public double getFullWeight() {
         return getWeight() + sand;
     }
+
+    @Override
+    public String getTypeTransport() {
+        if (typeLocomotive != null){
+            return typeLocomotive.toString();
+        }
+        return "Type not set";
+    }
+
+
 }

@@ -58,6 +58,15 @@ public class PassengerWagon extends RailwayTransport {
 
     @Override
     public double getFullWeight() {
-        return getWeight() + passengers * RailWayUtils.WEIGHT_AVERAGE_PERSON;
+        return getWeight() + passengers *
+                RailWayUtils.WEIGHT_AVERAGE_PERSON;
+    }
+
+    @Override
+    public String getTypeTransport() {
+        if (typePassengerWagon != null){
+            return typePassengerWagon.toString();
+        }
+        return "Type not set";
     }
 }

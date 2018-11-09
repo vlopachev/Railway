@@ -25,4 +25,6 @@ public abstract class RailwayTransport {
 
     public abstract double getFullWeight();
 
+    public abstract String getTypeTransport();
+
 }
