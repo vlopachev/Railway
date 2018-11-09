@@ -31,7 +31,7 @@ public class PassengerWagon extends RailwayTransport {
                 seats = RailWayUtils.SEATS_SLEEPING_WAGON;
                 break;
             default:
-                new RuntimeException("Not Supported TypePassengerWagon");
+                throw new RuntimeException("Not Supported TypePassengerWagon");
         }
     }
 

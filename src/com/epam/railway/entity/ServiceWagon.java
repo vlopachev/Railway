@@ -27,7 +27,7 @@ public class ServiceWagon extends RailwayTransport {
                 seats = RailWayUtils.SEATS_BAGGAGE_WAGON;
                 break;
             default:
-                new RuntimeException("Not Supported TypeServiceWagon");
+                throw new RuntimeException("Not Supported TypeServiceWagon");
         }
     }
 

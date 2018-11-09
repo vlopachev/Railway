@@ -36,7 +36,7 @@ public class CargoWagon extends RailwayTransport {
                 payload = RailWayUtils.PAYLOAD_TANK_WAGON;
                 break;
             default:
-                new RuntimeException("Not Supported TypeCargoWagon");
+                throw new RuntimeException("Not Supported TypeCargoWagon");
         }
     }
 

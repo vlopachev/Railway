@@ -11,10 +11,6 @@ public class Locomotive extends RailwayTransport {
         return power;
     }
 
-    public void setPower(int power) {
-        this.power = power;
-    }
-
     public double getSand() {
         return sand;
     }
@@ -33,7 +29,7 @@ public class Locomotive extends RailwayTransport {
                     }
                     break;
                 default:
-                    new RuntimeException("Not Supported TypeLocomotive");
+                    throw new RuntimeException("Not Supported TypeLocomotive");
             }
         }
     }
@@ -47,12 +43,14 @@ public class Locomotive extends RailwayTransport {
         switch (typeLocomotive){
             case LOCOMOTIVE_2ES4K:
                 setWeight(RailWayUtils.WEIGHT_2ES4K);
+                power = RailWayUtils.POWER_2ES4K;
                 break;
             case LOCOMOTIVE_3ES4K:
                 setWeight(RailWayUtils.WEIGHT_3ES4K);
+                power = RailWayUtils.POWER_3ES4K;
                 break;
             default:
-                new RuntimeException("Not Supported TypeLocomotive");
+                throw new RuntimeException("Not Supported TypeLocomotive");
         }
     }
 

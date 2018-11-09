@@ -14,7 +14,7 @@ public class Start {
                 (Locomotive) factory.createRailwayTransport(TypeRailwayTransport.LOCOMOTIVE);
         locomotive.setTypeLocomotive(TypeLocomotive.LOCOMOTIVE_2ES4K);
         locomotive.setSand(RailWayUtils.SAND_STOCK_2ES4K);
-        locomotive.setPower(RailWayUtils.POWER_2ES4K);
+
 
         List<RailwayTransport> train = new ArrayList<>();
         train.add(locomotive);
@@ -22,8 +22,8 @@ public class Start {
         for (int i = 0; i < 60; i++) {
             CargoWagon wagon =
                     (CargoWagon) factory.createRailwayTransport(TypeRailwayTransport.CARGO_WAGON);
-            wagon.setTypeCargoWagon(TypeCargoWagon.OPEN_WAGON);
-            wagon.setCargo(70);
+            wagon.setTypeCargoWagon(TypeCargoWagon.COVERED_WAGON);
+            wagon.setCargo(68);
             train.add(wagon);
         }
 
