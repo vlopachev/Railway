@@ -13,7 +13,6 @@ public class ServiceWagon extends RailwayTransport {
         super(typeRailwayTransport);
     }
 
-
     public TypeServiceWagon getTypeServiceWagon() {
         return typeServiceWagon;
     }
@@ -85,5 +84,4 @@ public class ServiceWagon extends RailwayTransport {
                 ", fullWeight=" + getFullWeight() +
                 '}';
     }
-
 }

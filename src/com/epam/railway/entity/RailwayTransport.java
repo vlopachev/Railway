@@ -10,7 +10,6 @@ public abstract class RailwayTransport {
     protected RailwayTransport(TypeRailwayTransport typeRailwayTransport) {
         this();
         this.typeRailwayTransport = typeRailwayTransport;
-
     }
 
     protected RailwayTransport() {

@@ -1,6 +1,5 @@
 package com.epam.railway.entity;
 
-
 import com.epam.railway.logic.RailwayUtils;
 
 public class CargoWagon extends RailwayTransport {

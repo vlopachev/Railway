@@ -19,7 +19,6 @@ public class RailwayTransportFactory {
                 break;
             default:
                 throw new RuntimeException("Not supported TypeRailwayTransport");
-
         }
         return transport;
     }
