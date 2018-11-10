@@ -7,6 +7,10 @@ public class PassengerWagon extends RailwayTransport {
     private int seats;
     private int passengers;
 
+    public PassengerWagon(TypeRailwayTransport typeRailwayTransport) {
+        super(typeRailwayTransport);
+    }
+
     public int getSeats() {
         return seats;
     }
@@ -50,8 +54,19 @@ public class PassengerWagon extends RailwayTransport {
     @Override
     public String getTypeTransport() {
         if (typePassengerWagon != null) {
-            return typePassengerWagon.toString();
+            return getTypeRailwayTransport().toString() + ":" + typePassengerWagon.toString();
         }
         return "Type not set";
+    }
+
+    @Override
+    public String toString() {
+        return "PassengerWagon{" +
+                "id=" + getId() +
+                ", typeCargoWagon=" + typePassengerWagon +
+                ", weight=" + getWeight() +
+                ", passengers=" + passengers +
+                ", fullWeight=" + getFullWeight() +
+                '}';
     }
 }

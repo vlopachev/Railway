@@ -6,16 +6,16 @@ public class RailwayTransportFactory {
 
         switch (railwayTransport){
             case LOCOMOTIVE:
-                transport = new Locomotive();
+                transport = new Locomotive(TypeRailwayTransport.LOCOMOTIVE);
                 break;
             case PASSENGER_WAGON:
-                transport = new PassengerWagon();
+                transport = new PassengerWagon(TypeRailwayTransport.PASSENGER_WAGON);
                 break;
             case CARGO_WAGON:
-                transport = new CargoWagon();
+                transport = new CargoWagon(TypeRailwayTransport.CARGO_WAGON);
                 break;
-            case POST_WAGON:
-                transport = new ServiceWagon();
+            case SERVICE_WAGON:
+                transport = new ServiceWagon(TypeRailwayTransport.SERVICE_WAGON);
                 break;
             default:
                 throw new RuntimeException("Not supported TypeRailwayTransport");

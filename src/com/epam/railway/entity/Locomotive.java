@@ -7,6 +7,10 @@ public class Locomotive extends RailwayTransport {
     private int power;
     private double sand;
 
+    public Locomotive(TypeRailwayTransport typeRailwayTransport) {
+        super(typeRailwayTransport);
+    }
+
     public int getPower() {
         return power;
     }
@@ -62,7 +66,7 @@ public class Locomotive extends RailwayTransport {
     @Override
     public String getTypeTransport() {
         if (typeLocomotive != null){
-            return typeLocomotive.toString();
+            return getTypeRailwayTransport().toString() + ":" + typeLocomotive.toString();
         }
         return "Type not set";
     }

@@ -9,6 +9,11 @@ public class ServiceWagon extends RailwayTransport {
     private double cargo;
     private double payload;
 
+    public ServiceWagon(TypeRailwayTransport typeRailwayTransport) {
+        super(typeRailwayTransport);
+    }
+
+
     public TypeServiceWagon getTypeServiceWagon() {
         return typeServiceWagon;
     }
@@ -19,12 +24,12 @@ public class ServiceWagon extends RailwayTransport {
             case BAGGAGE_WAGON:
                 setWeight(RailwayUtils.WEIGHT_BAGGAGE_WAGON);
                 payload = RailwayUtils.PAYLOAD_BAGGAGE_WAGON;
-                seats = RailwayUtils.SEATS_POST_WAGON;
+                seats = RailwayUtils.SEATS_BAGGAGE_WAGON;
                 break;
             case POST_WAGON:
                 setWeight(RailwayUtils.WEIGHT_POST_WAGON);
                 payload = RailwayUtils.PAYLOAD_POST_WAGON;
-                seats = RailwayUtils.SEATS_BAGGAGE_WAGON;
+                seats = RailwayUtils.SEATS_POST_WAGON;
                 break;
             default:
                 throw new RuntimeException("Not Supported TypeServiceWagon");
@@ -64,10 +69,21 @@ public class ServiceWagon extends RailwayTransport {
     @Override
     public String getTypeTransport() {
         if (typeServiceWagon != null) {
-            typeServiceWagon.toString();
+            return getTypeRailwayTransport().toString() + ":" + typeServiceWagon.toString();
         }
         return "Type not set";
     }
 
+    @Override
+    public String toString() {
+        return "ServiceWagon{" +
+                "id=" + getId() +
+                "typeServiceWagon=" + typeServiceWagon +
+                ", weight=" + getWeight() +
+                ", operators=" + operators +
+                ", cargo=" + cargo +
+                ", fullWeight=" + getFullWeight() +
+                '}';
+    }
 
 }

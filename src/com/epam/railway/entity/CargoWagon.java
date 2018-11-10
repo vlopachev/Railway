@@ -8,6 +8,10 @@ public class CargoWagon extends RailwayTransport {
     private double cargo;
     private double payload;
 
+    public CargoWagon(TypeRailwayTransport typeRailwayTransport) {
+        super(typeRailwayTransport);
+    }
+
     public TypeCargoWagon getTypeCargoWagon() {
         return typeCargoWagon;
     }
@@ -62,7 +66,7 @@ public class CargoWagon extends RailwayTransport {
     @Override
     public String getTypeTransport() {
         if (typeCargoWagon != null) {
-            return typeCargoWagon.toString();
+            return getTypeRailwayTransport().toString() + ":" + typeCargoWagon.toString();
         }
         return "Type not set";
     }

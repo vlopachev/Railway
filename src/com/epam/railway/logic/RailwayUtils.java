@@ -1,8 +1,11 @@
 package com.epam.railway.logic;
 
+import com.epam.railway.entity.CargoWagon;
 import com.epam.railway.entity.Locomotive;
 import com.epam.railway.entity.RailwayTransport;
+import com.epam.railway.entity.TypeRailwayTransport;
 
+import java.util.Calendar;
 import java.util.List;
 
 public final class RailwayUtils {
@@ -45,6 +48,7 @@ public final class RailwayUtils {
     public final static double WEIGHT_COUCHETTE_WAGON = 56.0;
     public final static int    SEATS_COUCHETTE_WAGON = 54;
 
+
     public static boolean isEnoughPowerLocomotiveForWagons(List<RailwayTransport> train){
         if (train != null){
             Locomotive locomotive = null;
@@ -63,9 +67,30 @@ public final class RailwayUtils {
     }
 
     public static boolean checkUniformityTrain(List<RailwayTransport> train){
-
-
-        return false;
+        boolean ifSo = false;
+        for (RailwayTransport transport: train){
+            if (transport.getTypeRailwayTransport() == TypeRailwayTransport.LOCOMOTIVE ||
+                    transport.getTypeRailwayTransport() == TypeRailwayTransport.CARGO_WAGON){
+                ifSo = true;
+            } else {
+                ifSo = false;
+                break;
+            }
+        }
+        if (ifSo){
+            return ifSo;
+        }
+        for (RailwayTransport transport: train){
+            if (transport.getTypeRailwayTransport() == TypeRailwayTransport.LOCOMOTIVE
+                    || transport.getTypeRailwayTransport() == TypeRailwayTransport.PASSENGER_WAGON
+                    || transport.getTypeRailwayTransport() == TypeRailwayTransport.SERVICE_WAGON){
+                ifSo = true;
+            } else {
+                ifSo = false;
+                break;
+            }
+        }
+        return ifSo;
     }
 
 
@@ -76,8 +101,6 @@ public final class RailwayUtils {
         }
         return weight;
     }
-
-
 
 
     private RailwayUtils() {

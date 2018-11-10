@@ -2,14 +2,29 @@ package com.epam.railway.entity;
 
 
 public abstract class RailwayTransport {
+    private TypeRailwayTransport typeRailwayTransport;
     private static long countId;
     private long id;
     private double weight;
 
-    public RailwayTransport() {
+    protected RailwayTransport(TypeRailwayTransport typeRailwayTransport) {
+        this();
+        this.typeRailwayTransport = typeRailwayTransport;
+
+    }
+
+    protected RailwayTransport() {
         countId ++;
         id = countId;
     }
+
+    public TypeRailwayTransport getTypeRailwayTransport() {
+        return typeRailwayTransport;
+    }
+
+    public abstract String getTypeTransport();
+
+    public abstract double getFullWeight();
 
     public long getId() {
         return id;
@@ -23,8 +38,5 @@ public abstract class RailwayTransport {
         this.weight = weight;
     }
 
-    public abstract double getFullWeight();
-
-    public abstract String getTypeTransport();
 
 }
